@@ -1,2 +1,2 @@
 # zcity-site
-Stupid Site for noobs and faggots
+Stupid Site for noobs and
