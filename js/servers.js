@@ -1,8 +1,13 @@
 const servers = [ //[name: string, ip: string, port: number]
-    ["Server: Z-City 1 | Beta | RU", "5.42.211.48", 24215], 
-    ["Server: Z-City 2 | Beta | RU", "5.42.211.48", 24217], 
-    ["Server: Z-City 3 | Beta | RU", "194.147.90.131", 24215], 
-    ["Server: Z-City 4 | Beta | RU", "194.147.90.131", 24217]];
+    ["Z-City | Official | RU #1", "5.42.211.40", 24215], 
+    ["Z-City | Official | RU #2", "5.42.211.40", 24217],
+    ["Z-City | Official | RU #3", "194.147.90.195", 24215], 
+    ["Z-City | Official | RU #4", "194.147.90.195", 24217],
+    ["Z-City | Official | EU #1", "45.152.160.251", 25568], 
+    ["Z-City | Official | EU #2", "45.152.160.251", 25660],
+    ["Z-City | Official | US #1", "216.173.77.150", 25567], 
+    ["Z-City | Official | US #2", "199.127.60.4", 25567],
+];
 
 const getOnlineColor = ((num, max) => {
     const percent = (num / max) * 100;
@@ -63,5 +68,3 @@ setInterval(() => {
         drawServer(i)
     }
 }, 30000)
-
-// Nya :3
