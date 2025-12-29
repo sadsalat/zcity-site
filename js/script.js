@@ -2,12 +2,12 @@ document.querySelector(".navbarbase").innerHTML =
 `   
 <div class="logo"><a class="red">Z</a><a class="nopad">CITY</a></div>
 <div>
-    <a class="navs" href="../index.htm">MAIN</a>
-    <a class="navs" href="../pages/wiki.htm">WIKI</a>
-    <a class="navs" href="../pages/rules.htm">RULES</a>
-    <a class="navs" href="../pages/discord.htm">DISCORD</a>
-    <a class="navs" href="../pages/donate.htm">DONATE</a>
-    <a class="navs" href="../pages/servers.htm">SERVERS</a>
+    <a class="navs" href="../index.html">MAIN</a>
+    <a class="navs" href="../pages/wiki.html">WIKI</a>
+    <a class="navs" href="../pages/rules.html">RULES</a>
+    <a class="navs" href="../pages/discord.html">DISCORD</a>
+    <a class="navs" href="../pages/donate.html">DONATE</a>
+    <a class="navs" href="../pages/servers.html">SERVERS</a>
 </div>
 `
 

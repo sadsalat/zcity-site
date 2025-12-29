@@ -260,6 +260,6 @@ ol {
 }
 
 ::view-transition-new(root) {
-  /* Apply animation to hobbies.html */
+  /* Apply animation to hobbies.htmll */
   animation: slide-from-right 0.3s;
 }
