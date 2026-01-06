@@ -7,16 +7,17 @@
 </head>
 <body>
 	<canvas id="grid"></canvas>
+    <div class="gradient"></div>
 	<div class="centertext">
 		<span class="text_1">Z</span>
-		<span class="text_1" style="color: rgb(255, 255, 255)">City</span>
-        <br>
-        <span class="info" id="info">There is nothing for you... sorry :3</span>
-        <br>
-        <span class="info" id="map"></span>
-        <br>
-        <span id="text_tips" tip>Hey where tips?</span>
-        
+		<span class="text_1" style="color:white;">City</span>
+        <div style="margin-top: -2vh;">
+            <span class="info" id="info">There is nothing for you... sorry :3</span>
+            <br>
+            <span class="info" id="map"></span>
+            <br>
+            <span id="text_tips" tip>Hey where tips?</span>
+        </div>
 	</div>
     <span class="info-down">zcity-help.ru</span>
 
@@ -24,13 +25,14 @@
         const canvas = document.getElementById('grid');
         const ctx = canvas.getContext('2d');
         
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth+25;
+        canvas.height = window.innerHeight+25;
         canvas.position = "absolute"
-        const gridSize = 50;
-        let offsetX = canvas.width;
-        let offsetY = -canvas.height;
-        const gridColor = 'rgba(30, 0, 0)';
+        
+        const gridSize = 60;
+        let offsetX = window.innerWidth;
+        let offsetY = -window.innerHeight;
+        const gridColor = 'rgba(99, 88, 104, 0.05)';
         
         function drawGrid() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -112,7 +114,7 @@
         const infoText = document.getElementById('info');
         const mapText = document.getElementById('map');
         function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
-            infoText.textContent = servername
+            infoText.textContent = servername.split("|")[2].trim()
             mapText.textContent = "On map: " + mapname
         }
     </script>

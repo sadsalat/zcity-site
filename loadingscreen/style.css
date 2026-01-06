@@ -5,20 +5,20 @@
 
 
 body {
-	background-color: black;
+	background-color: rgb(8, 6, 10);
 	display: flex;
 	justify-content: center;
 	overflow: hidden;
 	height: 100vh;
 	width: 100vw;
-	background: linear-gradient(0deg,rgb(0, 0, 10) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
 .text_1 {
 	font-family: "Disket-Mono-Bold", sans-serif;
 	font-weight: bold;
 	font-size: 12vh;
-	color: rgb(200, 0, 0);
+	color: rgb(223, 46, 46);
+	text-shadow: 3px 3px rgb(42, 28, 61);
 	text-align: center;
 }
 #text_tips {
@@ -26,9 +26,10 @@ body {
     font-size: 3vh;
     font-weight: lighter;
     font-stretch: extra-condensed;
-	color: rgb(200,200,200);
+	color: white;
+	text-shadow: 2px 2px rgb(42, 28, 61);
 	text-align: center;
-	transition: 1s ease-in-out;
+	transition: opacity 1s ease-in-out;
 	opacity: 1;
 }
 
@@ -37,7 +38,8 @@ body {
     font-size: 2.5vh;
     font-weight: lighter;
     font-stretch: extra-condensed;
-	color: rgb(200,200,200);
+	color: white;
+	text-shadow: 2px 2px rgb(42, 28, 61);
 	text-align: center;
 }
 .info-down{
@@ -45,7 +47,7 @@ body {
     font-size: 2vh;
     font-weight: lighter;
     font-stretch: extra-condensed;
-	color: rgb(50,50,50);
+	color: rgb(155,155,155);
 	position: absolute;
 	top: 95%;
 }
@@ -54,4 +56,12 @@ body {
 	position: absolute;
 	margin-top: 40vh;
 	text-align: center;
+}
+
+.gradient {
+	position: absolute;
+	width: 100vw;
+    height: 100vh;
+	
+	background: linear-gradient(0deg,rgba(94, 23, 23, 0.5) 5%, rgba(0, 0, 0, 0) 70%);
 }
