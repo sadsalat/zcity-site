@@ -11,6 +11,8 @@
 		<span class="text_1">Z</span>
 		<span class="text_1" style="color: rgb(255, 255, 255)">City</span>
         <br>
+        <span id="info">loading...</span>
+        <br>
         <span id="text_tips" tip></span>
 	</div>
 
@@ -100,6 +102,12 @@
             },12000)
         }
         setTimeout(() => {changeText()},100)
+
+
+        const infoText = document.getElementById('info');
+        function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
+            infoText.textContent = servername + " Map: " + mapname
+        }
     </script>
 </body>
 </html>

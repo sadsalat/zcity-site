@@ -31,6 +31,15 @@ body {
 	opacity: 1;
 }
 
+#info{
+	font-family: 'Bahnschrift';
+    font-size: 3vh;
+    font-weight: lighter;
+    font-stretch: extra-condensed;
+	color: rgb(200,200,200);
+	text-align: center;
+}
+
 .centertext {
 	position: absolute;
 	margin-top: 40vh;
