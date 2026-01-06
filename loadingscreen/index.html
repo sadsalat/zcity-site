@@ -70,9 +70,9 @@
     </script>
 
     <script>
+        const currentLang = navigator.language;
         function SelectTip() {
-            const currentLang = navigator.language;
-            const newLang = (currentLang === 'ru-RU') ? 'ru' : 'en';
+            const newLang = (currentLang === 'ru-RU' || currentLang === 'ru') ? 'ru' : 'en';
 
             fetch(`tips/${newLang}.json`)
                 .then(response => response.json())
@@ -116,6 +116,7 @@
         function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
             infoText.textContent = servername.split("|")[2].trim()
             mapText.textContent = "On map: " + mapname
+            currentLang = language
         }
     </script>
 </body>
