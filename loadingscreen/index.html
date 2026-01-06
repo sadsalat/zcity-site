@@ -70,9 +70,9 @@
     </script>
 
     <script>
-        const currentLang = navigator.language;
+        var currentLang = navigator.language;
         function SelectTip() {
-            const newLang = (currentLang === 'ru') ? 'ru' : 'en';
+            const newLang = (currentLang === 'ru-RU' || currentLang === 'ru') ? 'ru' : 'en';
 
             fetch(`tips/${newLang}.json`)
                 .then(response => response.json())
