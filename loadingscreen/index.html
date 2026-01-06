@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+	<canvas id="grid"></canvas>
+	<div class="centertext">
+		<span class="text_1">Z</span>
+		<span class="text_1" style="color: rgb(255, 255, 255)">City</span>
+	</div>
+
+    <script>
+        const canvas = document.getElementById('grid');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const gridSize = 50;
+        let offsetX = canvas.width;
+        let offsetY = -canvas.height;
+        const gridColor = 'rgba(80, 0, 0)';
+        
+        function drawGrid() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let x = offsetX % gridSize; x < canvas.width + gridSize; x += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, canvas.height);
+                ctx.strokeStyle = gridColor;
+                ctx.lineWidth = 2.5;
+                ctx.stroke();
+            }
+
+            for (let y = offsetY % gridSize; y < canvas.height + gridSize; y += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(canvas.width, y);
+                ctx.strokeStyle = gridColor;
+                ctx.lineWidth = 2.5;
+                ctx.stroke();
+            }
+
+            offsetX -= Math.min(Math.max(Math.sin(Date.now() / 10000), -0.2), 0.2);
+            offsetY += 0.2;
+
+            requestAnimationFrame(drawGrid);
+        }
+
+        drawGrid();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
