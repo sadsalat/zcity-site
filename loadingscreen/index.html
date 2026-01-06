@@ -11,10 +11,14 @@
 		<span class="text_1">Z</span>
 		<span class="text_1" style="color: rgb(255, 255, 255)">City</span>
         <br>
-        <span id="info">loading...</span>
+        <span class="info" id="info">There is nothing for you... sorry :3</span>
         <br>
-        <span id="text_tips" tip></span>
+        <span class="info" id="map"></span>
+        <br>
+        <span id="text_tips" tip>Hey where tips?</span>
+        
 	</div>
+    <span class="info-down">zcity-help.ru</span>
 
     <script>
         const canvas = document.getElementById('grid');
@@ -22,6 +26,7 @@
         
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+        canvas.position = "absolute"
         const gridSize = 50;
         let offsetX = canvas.width;
         let offsetY = -canvas.height;
@@ -101,12 +106,14 @@
                 //startThink()
             },12000)
         }
-        setTimeout(() => {changeText()},100)
+        setTimeout(() => {changeText()},500)
 
 
         const infoText = document.getElementById('info');
+        const mapText = document.getElementById('map');
         function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
-            infoText.textContent = servername + " Map: " + mapname
+            infoText.textContent = servername
+            mapText.textContent = "On map: " + mapname
         }
     </script>
 </body>

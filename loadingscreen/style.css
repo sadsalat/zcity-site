@@ -31,13 +31,22 @@ body {
 	opacity: 1;
 }
 
-#info{
+.info {
 	font-family: 'Bahnschrift';
-    font-size: 3vh;
+    font-size: 2.5vh;
     font-weight: lighter;
     font-stretch: extra-condensed;
 	color: rgb(200,200,200);
 	text-align: center;
+}
+.info-down{
+	font-family: 'Bahnschrift';
+    font-size: 2vh;
+    font-weight: lighter;
+    font-stretch: extra-condensed;
+	color: rgb(50,50,50);
+	position: absolute;
+	top: 95%;
 }
 
 .centertext {
