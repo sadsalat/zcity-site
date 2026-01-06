@@ -10,6 +10,8 @@
 	<div class="centertext">
 		<span class="text_1">Z</span>
 		<span class="text_1" style="color: rgb(255, 255, 255)">City</span>
+        <br>
+        <span id="text_tips" tip></span>
 	</div>
 
     <script>
@@ -21,7 +23,7 @@
         const gridSize = 50;
         let offsetX = canvas.width;
         let offsetY = -canvas.height;
-        const gridColor = 'rgba(80, 0, 0)';
+        const gridColor = 'rgba(30, 0, 0)';
         
         function drawGrid() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -56,6 +58,48 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         });
+    </script>
+
+    <script>
+        function SelectTip() {
+            const currentLang = navigator.language;
+            const newLang = (currentLang === 'ru-RU') ? 'ru' : 'en';
+
+            fetch(`tips/${newLang}.json`)
+                .then(response => response.json())
+                .then(translationData => {
+                    document.querySelectorAll('[tip]').forEach(element => {
+                        var keys = Object.keys(translationData)
+                        const key = keys[Math.floor(Math.random() * keys.length)]
+                        //console.log(key)
+                        if (translationData[key]) {
+                            element.textContent = translationData[key];
+                        }
+                    });   
+                })
+                .catch(error => console.error('Error loading language file:', error)); 
+        }
+        const changingText = document.getElementById('text_tips');
+        function changeText(){
+            changingText.style.opacity = 0;
+            changingText.addEventListener('transitionend', handleTransitionEnd, { once: true });
+            function handleTransitionEnd(){
+                changingText.style.opacity = 1;
+                SelectTip()
+                startThink()
+                //changingText.classList.remove('fade-out');
+                //SelectTip()
+            }
+            
+        }
+
+        function startThink(){
+            setTimeout(() => {
+                changeText()
+                //startThink()
+            },12000)
+        }
+        setTimeout(() => {changeText()},100)
     </script>
 </body>
 </html>
